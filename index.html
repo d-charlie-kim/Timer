@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Timer</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<h1></h1>
+		</header>
+		<div class="timer">
+			<h2 class="timer-title">TIMER</h2>
+			<div class="line"></div>
+			<section class="timer-main">
+				<div class="time hour">
+					<p>HRS</p>
+					<span class="hour-num"></span>
+				</div>
+				<div class="dot">
+					<img src="./img/dot.png">
+				</div>
+				<div class="time min">
+					<p>MIN</p>
+					<span class="min-num"></span>
+				</div>
+				<div class="dot">
+					<img src="./img/dot.png">
+				</div>
+				<div class="time sec">
+					<p>SEC</p>
+					<span class="sec-num"></span>
+				</div>
+			</section>
+			<section class="btn-group">
+				<button type="button" class="btn start" id="play-pause"></button>
+				<button type="button" class="btn reset" id="reset"></button>
+			</section>
+		</div>
+		<footer>
+			<h3></h3>
+		</footer>
+	</div>
+	<script src="./script.js"></script>
+</body>
+
+</html>
