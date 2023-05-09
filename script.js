@@ -37,11 +37,13 @@ $pButton.addEventListener('click', () => {
 
 	if (storage.start) {
 		storage.start = false;
-		storage.classList.add('pause');
+		storage.classList.remove('pause');
+		storage.classList.add('start');
 	}
 	else {
 		storage.start = true;
-		storage.classList.remove('pause');
+		storage.classList.remove('start');
+		storage.classList.add('pause');
 		timerStart();
 	}
 })
@@ -116,24 +118,6 @@ function timerStart() {
 		}
 		render();
 	}, 1000);
-
-	// storage.minIntervalID = setInterval(function () {
-	// 	min++;
-	// 	if (min == 60) {
-	// 		min = 0;
-	// 	} else if (min < 10) {
-	// 		min = "0" + min;
-	// 	}
-	// 	document.getElementById("min").innerText = min;
-	// }, 60000);
-
-	// storage.hrsIntervalID = setInterval(function () {
-	// 	hour++;
-	// 	if (hour < 10) {
-	// 		hour = "0" + hour;
-	// 	}
-	// 	document.getElementById("hour").innerText = hour;
-	// }, 3600000);
 }
 
 
