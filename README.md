@@ -3,7 +3,7 @@
 </p>
 <h2 align="middle">타이머</h2>
 <h3 align="middle">HTML / CSS / JavaScript 활용 연습 Part03</h3>
-<p align="middle">DEMO : </p>
+<p align="middle">DEMO : https://d-charlie-kim.github.io/Timer/</p>
 <p align="middle">
   <img src="https://img.shields.io/badge/language-html-red.svg?style=flat-square"/>
   <img src="https://img.shields.io/badge/language-css-blue.svg?style=flat-square"/>
@@ -13,7 +13,7 @@
 ## 🔥 Projects!
 
 <div height="400px" align="middle">
-  <img width="200px;" src="#" alt="실행 결과"/>
+  <img width="200px;" src="./img/demo.png" alt="실행 결과"/>
 </div>
 
 ## 🎯 기능 요구사항
