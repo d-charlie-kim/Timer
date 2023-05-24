@@ -9,8 +9,6 @@ const storage = {
 	hrs: 0,
 	min: 0,
 	sec: 0,
-	hrsIntervalID: null,
-	minIntervalID: null,
 	secIntervalID: null,
 }
 
@@ -37,13 +35,14 @@ $pButton.addEventListener('click', () => {
 
 	if (storage.start) {
 		storage.start = false;
-		storage.classList.remove('pause');
-		storage.classList.add('start');
+		$pButton.classList.remove('pause');
+		$pButton.classList.add('start');
+		clearInterval(storage.secIntervalID);
 	}
 	else {
 		storage.start = true;
-		storage.classList.remove('start');
-		storage.classList.add('pause');
+		$pButton.classList.remove('start');
+		$pButton.classList.add('pause');
 		timerStart();
 	}
 })
@@ -52,8 +51,6 @@ $resetButton.addEventListener('click', clear);
 
 function clear() {
 	storage.start = false;
-	clearInterval(storage.hrsIntervalID);
-	clearInterval(storage.minIntervalID);
 	clearInterval(storage.secIntervalID);
 	storage.hrs = 0;
 	storage.min = 0;
@@ -81,11 +78,17 @@ function render() {
 		storage.input = false;
 		$resetButton.classList.add('disabled');
 		$pButton.classList.add('disabled');
+		$pButton.classList.remove('pause');
+		$pButton.classList.add('start');
+		$resetButton.style.cursor = 'auto';
+		$pButton.style.cursor = 'auto';
 	}
 	else if (!storage.input) {
 		storage.input = true;
 		$resetButton.classList.remove('disabled');
 		$pButton.classList.remove('disabled');
+		$resetButton.style.cursor = 'pointer';
+		$pButton.style.cursor = 'pointer';
 	}
 
 	if (storage.hrs < 10)
@@ -104,16 +107,22 @@ function render() {
 
 function timerStart() {
 	storage.secIntervalID = setInterval(function () {
-		if (storage.min === 0 && storage.hrs === 0 && storage.sec === 0)
+		if (storage.min === 0 && storage.hrs === 0 && storage.sec === 1) {
+			$secButton.innerText = 0;
 			clear();
+			setTimeout(() => {
+				alert('타이머가 종료되었습니다!');
+			},10);
+			return ;
+		}
 
 		storage.sec--;
-		if (storage.sec === 0) {
-			storage.sec = 60;
+		if (storage.sec === -1) {
+			storage.sec = 59;
 			storage.min--;
 		}
-		if (storage.min === 0) {
-			storage.min = 60;
+		if (storage.min === -1) {
+			storage.min = 59;
 			storage.hrs--;
 		}
 		render();
