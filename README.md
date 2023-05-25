@@ -13,9 +13,9 @@
 ## 🔥 Projects!
 
 <div height="400px" align="middle">
-  <img width="300px;" src="./img/demo1.png" alt="실행 결과"/>
-  <img width="300px;" src="./img/demo2.png" alt="실행 결과"/>
-  <img width="300px;" src="./img/demo3.png" alt="실행 결과"/>
+  <img width="250px;" src="./img/demo1.png" alt="실행 결과"/>
+  <img width="250px;" src="./img/demo2.png" alt="실행 결과"/>
+  <img width="250px;" src="./img/demo3.png" alt="실행 결과"/>
 </div>
 
 ## 🎯 기능 요구사항
